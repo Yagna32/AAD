@@ -36,9 +36,7 @@ def lcs(X, Y, m, n):
 	print("\nLength of LCS is", L[m][n])
 	print("\nLCS : " + "".join(Lcs_char))
 	print()
-
-	return L[m][n]
-
+	return 0
 
 S1 = "AGGTAB"
 S2 = "GXTXAYB"
