@@ -1,13 +1,20 @@
-def maxProfit(p,w):
-    dp = [[None]*len(w+1)]*len(w)
-    
-    for i in range(len(w+1)):
-        for j in w:
-            if True:
-                pass
+def knapSack(max_W, wt, profits):
+	K = [[0 for x in range(max_W + 1)] for x in range(len(profits) + 1)]
+
+	for i in range(len(profits) + 1):
+		for w in range(max_W + 1):
+			if i == 0 or w == 0:
+				K[i][w] = 0
+			elif wt[i-1] <= w:
+				K[i][w] = max(profits[i-1]+ K[i-1][w-wt[i-1]],K[i-1][w])
+			else:
+				K[i][w] = K[i-1][w]
+	for j in K:
+		print(j)
+	return K[len(profits)][max_W]
 
 
-w = [2,3,4,5]
-p = [3,4,5,6]
-
-maxProfit(p,w)
+profits = [3,4,5,6]
+weights = [2,3,4,5]
+max_W = 5
+print(knapSack(max_W, weights, profits))
