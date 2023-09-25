@@ -1,8 +1,6 @@
 # Dynamic Programming implementation of LCS problem
 
 def lcs(X, Y, m, n):
-
-	elements = []
 	L = [[0]*(n+1) for i in range(m+1)]
 	for i in range(m+1):
 		for j in range(n+1):
@@ -10,13 +8,12 @@ def lcs(X, Y, m, n):
 				L[i][j] = 0
 			elif X[i-1] == Y[j-1]:
 				L[i][j] = L[i-1][j-1]+1
-				elements.append([i,j])
 			else:
 				L[i][j] = max(L[i-1][j], L[i][j-1])
 
 	index = L[m][n]
 	Lcs_char = [""] * (index+1)
-	Lcs_char[index] = ''
+	
 
 	p=m
 	q=n
