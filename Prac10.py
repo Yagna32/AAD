@@ -28,6 +28,7 @@ def MCM(Dimensions,n):
                 if steps < m[i][j]:
                     m[i][j] = steps
                     parenthesization[i][j] = k
+                    
     print('Optimal parenthesization :',end=' ')
     printParenthesis(1,n-1,n,parenthesization)
     return m[1][n-1]
