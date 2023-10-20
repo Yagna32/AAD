@@ -13,7 +13,7 @@ def coinChange(coins,amount):
         return dp[amount], coin_used[amount]
 
 coins = [4,6,1]
-amount = 9
+amount = 8
 min_coins, coins_used = coinChange(coins,amount)
 print('Minimum amount of coins needed :',min_coins)
 print('Coins used : ',coins_used)
