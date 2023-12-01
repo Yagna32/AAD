@@ -14,6 +14,7 @@ def binarySearch(YGN,num,count=0):
     else :
         return binarySearch(YGN[mid:],num,count)
     
+    
 def linearSearch(YGN,num):
     count = 0
 
